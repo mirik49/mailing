@@ -1,0 +1,7 @@
+<svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line y1="2.5" x2="24" y2="2.5" stroke="black" stroke-width="5"/>
+<line y1="11.5" x2="24" y2="11.5" stroke="black" stroke-width="5"/>
+<line y1="20.5" x2="24" y2="20.5" stroke="black" stroke-width="5"/>
+<rect class="svg-menu-open" x="15" y="18" width="9" height="5" fill="white"/>
+<path d="M18 18L24 18L21 23L18 18Z" fill="black"/>
+</svg>

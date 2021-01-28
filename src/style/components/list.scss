@@ -1,0 +1,189 @@
+@import './mixins';
+
+.list {
+  &__header,
+  &__body {
+    @include dropList;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    position: relative;
+    padding: 0 20px;
+
+    &-item {
+      font-weight: 300;
+      font-size: 11px;
+      line-height: 14px;
+
+      @media (min-width: 900px) {
+        font-size: 16px;
+        line-height: 19px;
+      }
+
+      &:nth-of-type(1) {
+        min-width: 20px;
+      }
+
+      &:not(:nth-last-of-type(1)) {
+        margin-right: 10px;
+      }
+
+      min-width: 80px;
+      @media (min-width: 900px) {
+        min-width: 150px;
+      }
+    }
+  }
+
+  &__header {
+    height: 34px;
+    background: #F4F4F4;
+    border-radius: 13px;
+
+    align-items: center;
+  }
+
+  &__body {
+    padding: 15px 20px;
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 2px;
+      background-color: #F4F4F4;
+      bottom: 0;
+    }
+  }
+
+  &__interior {
+    @include dropList;
+    height: 55px;
+    overflow-y: overlay;
+    padding: 5px;
+
+    &--long {
+      background-color: #F4F6F9;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 8px; /* ширина для вертикального скролла */
+      height: 8px; /* высота для горизонтального скролла */
+      background-color: #c2c2c2;
+      border-radius: 9em;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #a6a6a6;
+      border-radius: 9em;
+      box-shadow: inset 1px 1px 10px #f3faf7;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #253861;
+    }
+
+    &-item {
+      display: flex;
+    }
+
+    &-val {
+      &:not(:nth-of-type(1)) {
+        margin-left: 5px;
+      }
+    }
+
+    &--days {
+      display: flex;
+
+      li {
+        &:not(:nth-last-of-type(1)) {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  &__btn-more {
+    border: none;
+    background: #ffffff;
+    padding: 5px;
+    outline: none;
+
+    & svg {
+      & line {
+        stroke: #000000;
+      }
+
+      & path {
+        fill: #000000;
+      }
+
+      & rect {
+        fill: #ffffff;
+      }
+    }
+
+    &:hover {
+      & svg {
+        & line {
+          stroke: #c2c2c2;
+        }
+
+        & path {
+          fill: #c2c2c2;
+        }
+      }
+    }
+
+    &--active {
+      & svg {
+        & path {
+          fill: #000000;
+          transform: rotate(-31deg);
+          transform-origin: 22px 18px;
+        }
+      }
+
+      &:hover {
+        & svg {
+          & line {
+            stroke: #000000;
+          }
+
+          & path {
+            fill: #000000;
+          }
+
+          & rect {
+            fill: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  &__actions {
+    @include dropList;
+    position: absolute;
+    top: 30px;
+    //right: 0;
+    background: #FFFFFF;
+    right: 165px;
+    display: flex;
+    flex-direction: column;
+   &-btn {
+     border: 1px solid #000000;
+     border-top-left-radius: 10px;
+     border-bottom-left-radius: 10px;
+     padding: 10px 20px;
+     background: none;
+     &:hover {
+       background-color: #c2c2c2;
+       border-color: #c2c2c2;
+     }
+   }
+
+  }
+}
